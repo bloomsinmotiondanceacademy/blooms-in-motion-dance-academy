@@ -60,19 +60,29 @@
             align-items: center;
             justify-content: center;
         }
-        /* Perfectly centered logo container using CSS background centering */
+        /* Large circular container that clips overflow */
         .logo-container {
             width: 320px;
             height: 320px;
             margin-bottom: 2rem;
             border-radius: 50%;
             background-color: var(--white);
-            background-image: url('logo.png');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: 102%; /* Adjusts size so it fills the circle nicely and removes extra edges */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
             box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             border: 6px solid rgba(255, 255, 255, 0.3);
+        }
+        /* Big image scaled up to fill the circle completely with precise alignment */
+        .logo-img {
+            width: 135%;
+            height: 135%;
+            object-fit: contain;
+            position: relative;
+            /* Adjust these pixel values if needed to fine-tune exact centering */
+            left: 0px; 
+            top: 0px; 
         }
         header h1 {
             margin: 0;
@@ -222,7 +232,9 @@
     </nav>
 
     <header>
-        <div class="logo-container"></div>
+        <div class="logo-container">
+            <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
+        </div>
         <h1>Blooms in Motion Dance Academy</h1>
         <p>Move your body, express your passion, and join our global family!</p>
     </header>
