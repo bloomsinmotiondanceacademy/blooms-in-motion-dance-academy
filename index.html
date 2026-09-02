@@ -24,7 +24,7 @@
         header {
             background: linear-gradient(135deg, var(--primary), #8a2075);
             color: var(--white);
-            padding: 2rem 1rem;
+            padding: 3rem 1rem 2.5rem 1rem;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             display: flex;
@@ -33,11 +33,13 @@
             justify-content: center;
         }
         .logo-img {
-            max-width: 200px; /* Adjust size as needed */
+            max-width: 160px;
             height: auto;
             margin-bottom: 1rem;
-            border-radius: 50%; /* Optional: gives it a soft circle look */
+            border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: white;
+            padding: 5px;
         }
         header h1 {
             margin: 0;
@@ -51,18 +53,20 @@
             color: #ffe0ea;
             font-weight: 300;
         }
+        /* Navigation now sits cleanly below the header banner */
         nav {
-            background-color: var(--primary);
+            background-color: var(--white);
             display: flex;
             justify-content: center;
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(92, 22, 78, 0.1);
+            border-bottom: 2px solid #f0d1df;
         }
         nav a {
-            color: var(--white);
+            color: var(--primary);
             text-decoration: none;
             margin: 0 1.5rem;
             font-weight: 600;
@@ -167,7 +171,6 @@
             color: var(--secondary);
             text-decoration: none;
         }
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
             header p { font-size: 1.1rem; }
