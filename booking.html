@@ -207,12 +207,14 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <a href="index.html">Home</a>
         <a href="booking.html" class="active">Book a Class</a>
         <a href="blog.html">Blog & Philosophy</a>
     </nav>
 
+    <!-- Header Banner -->
     <header>
         <h1>Book Your Private Class</h1>
         <p>Book now to join our international dance family and master your preferred style!</p>
@@ -220,39 +222,41 @@
 
     <div class="container">
 
+        <!-- Booking Form Section -->
         <section id="booking-form">
             <h2>Class Registration Form</h2>
-            <p class="intro-text">Fill out the details below to request your 1-on-1 private session. Submitting this form will automatically open your email client to send your details directly to our academy.</p>
+            <p class="intro-text">Fill out the details below. Clicking the submit button will automatically prepare an email with your booking information to send straight to our academy.</p>
             
             <div class="info-note">
                 <p><strong>Class Details:</strong> All classes are 1-on-1 online video sessions (1 hour standard duration, with extensions available depending on schedule availability).</p>
             </div>
 
-            <form action="mailto:bloomsinmotiondance@proton.me" method="POST" enctype="text/plain">
+            <!-- JavaScript-powered Email Template Form -->
+            <form onsubmit="sendBookingEmail(event)">
                 
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" name="Student Name" required placeholder="Enter your full name">
+                    <input type="text" id="name" required placeholder="Enter your full name">
                 </div>
 
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <input type="number" id="age" name="Age" required placeholder="Enter your age">
+                    <input type="number" id="age" required placeholder="Enter your age">
                 </div>
 
                 <div class="form-group">
                     <label for="country">Country / Location</label>
-                    <input type="text" id="country" name="Country" required placeholder="e.g., United States, Philippines, UK">
+                    <input type="text" id="country" required placeholder="e.g., United States, Philippines, UK">
                 </div>
 
                 <div class="form-group">
                     <label for="contact">Contact Number / Email</label>
-                    <input type="text" id="contact" name="Contact Info" required placeholder="Your email address or phone number">
+                    <input type="text" id="contact" required placeholder="Your email address or phone number">
                 </div>
 
                 <div class="form-group">
                     <label for="genre">Preferred Dance Genre</label>
-                    <select id="genre" name="Preferred Genre" required>
+                    <select id="genre" required>
                         <option value="" disabled selected>Select a dance style (or specify below)</option>
                         <option value="Ballet">Ballet</option>
                         <option value="Contemporary">Contemporary</option>
@@ -280,19 +284,20 @@
 
                 <div class="form-group">
                     <label for="time">Preferred Days & Time Window</label>
-                    <input type="text" id="time" name="Preferred Schedule" required placeholder="e.g., Weekdays after 5 PM UTC">
+                    <input type="text" id="time" required placeholder="e.g., Weekdays after 5 PM UTC">
                 </div>
 
                 <div class="form-group">
                     <label for="notes">Additional Notes or Custom Requests</label>
-                    <textarea id="notes" name="Additional Notes" rows="4" placeholder="Tell us if you have any specific goals or custom genre requests!"></textarea>
+                    <textarea id="notes" rows="4" placeholder="Tell us if you have any specific goals or custom genre requests!"></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Submit Booking Request via Email</button>
+                <button type="submit" class="submit-btn">Send Booking Details via Email</button>
 
             </form>
         </section>
 
+        <!-- Academy Policies Section -->
         <section id="policies">
             <h2>Academy Policies & Guidelines</h2>
             <p class="intro-text">To maintain a safe, respectful, and joyful learning environment for everyone, please review our core policies:</p>
@@ -306,6 +311,7 @@
                 <li><strong>Attire & Safety:</strong> Please wear comfortable clothes and proper dance shoes appropriate for your genre to prevent accidents or slips.</li>
             </ul>
 
+            <!-- Teacher Hiring Box -->
             <div class="teacher-box">
                 <h3>Looking to Join Us as a Professional Teacher? ❤️</h3>
                 <p>We are always open to welcoming passionate professional teachers internationally! If you would like to join our academy, please reach out directly to our email at <a href="mailto:bloomsinmotiondance@proton.me">bloomsinmotiondance@proton.me</a>. We will gladly send you the instructions for the interview and hiring process.</p>
@@ -314,6 +320,7 @@
 
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Blooms in Motion Dance Academy. All rights reserved.</p>
         <p>
@@ -321,6 +328,37 @@
             Live Agent Chat: <a href="https://matrix.to/#/@bloominmotiondanceacademy:matrix.org" target="_blank">Matrix Chat Portal</a>
         </p>
     </footer>
+
+    <!-- Script to format the email template and open user's email client -->
+    <script>
+        function sendBookingEmail(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const country = document.getElementById('country').value;
+            const contact = document.getElementById('contact').value;
+            const genre = document.getElementById('genre').value;
+            const time = document.getElementById('time').value;
+            const notes = document.getElementById('notes').value || 'None';
+
+            const emailSubject = encodeURIComponent("New Dance Class Booking Request - " + name);
+            const emailBody = encodeURIComponent(
+                "Hello Blooms in Motion Dance Academy,\n\n" +
+                "I would like to book a private dance class. Here are my details:\n\n" +
+                "• Full Name: " + name + "\n" +
+                "• Age: " + age + "\n" +
+                "• Country / Location: " + country + "\n" +
+                "• Contact Info: " + contact + "\n" +
+                "• Preferred Dance Genre: " + genre + "\n" +
+                "• Preferred Schedule: " + time + "\n" +
+                "• Additional Notes: " + notes + "\n\n" +
+                "Looking forward to hearing from you!"
+            );
+
+            window.location.href = `mailto:bloomsinmotiondance@proton.me?subject=${emailSubject}&body=${emailBody}`;
+        }
+    </script>
 
 </body>
 </html>
