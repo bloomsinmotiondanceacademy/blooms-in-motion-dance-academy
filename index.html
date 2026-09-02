@@ -60,13 +60,26 @@
             align-items: center;
             justify-content: center;
         }
-        /* Standalone logo image without any background circle or container box */
-        .logo-img {
-            width: 280px;
-            height: auto;
+        /* Extra-large circular wrapper to make the logo big and bold */
+        .logo-container {
+            width: 340px;
+            height: 340px;
             margin-bottom: 2rem;
+            border-radius: 50%;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border: 5px solid rgba(255, 255, 255, 0.4);
+        }
+        /* Fills the larger circle nicely */
+        .logo-img {
+            width: 108%;
+            height: 108%;
+            object-fit: cover;
             display: block;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
         }
         header h1 {
             margin: 0;
@@ -188,8 +201,9 @@
             header {
                 padding: 3rem 1.5rem;
             }
-            .logo-img {
-                width: 200px;
+            .logo-container {
+                width: 240px;
+                height: 240px;
             }
             header h1 {
                 font-size: 2.2rem;
@@ -215,7 +229,9 @@
     </nav>
 
     <header>
-        <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
+        <div class="logo-container">
+            <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
+        </div>
         <h1>Blooms in Motion Dance Academy</h1>
         <p>Move your body, express your passion, and join our global family!</p>
     </header>
