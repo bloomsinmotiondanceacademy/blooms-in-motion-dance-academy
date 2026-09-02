@@ -1,1 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooms in Motion Dance Academy - Blog & Philosophy</title>
+    <style>
+        :root {
+            --primary: #5c164e; /* Deep Plum */
+            --secondary: #ff758c; /* Vibrant Pink */
+            --accent: #ff7eb3; /* Lighter Pink */
+            --bg-light: #fff5f8; /* Very Light Pink Bg */
+            --text-dark: #333333;
+            --white: #ffffff;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        /* Navigation Bar - Matching Home & Booking Pages Exactly */
+        nav {
+            background-color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(92, 22, 78, 0.1);
+            border-bottom: 2px solid #f0d1df;
+        }
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 2rem;
+            font-weight: 600;
+            font-size: 1.15rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            color: var(--secondary);
+        }
+        /* Header Banner - Matching Style */
+        header {
+            background: linear-gradient(135deg, var(--primary), #8a2075);
+            color: var(--white);
+            padding: 4rem 2rem 3.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.25rem;
+            margin-top: 0.8rem;
+            color: #ffe0ea;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: var(--white);
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(92, 22, 78, 0.08);
+            border-top: 6px solid var(--secondary);
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 2.1rem;
+            margin-top: 0;
+            border-bottom: 2px solid #f0d1df;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .intro-text {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Blog Post Layout with Real Dancing Genre Images */
+        .blog-post {
+            margin-bottom: 3rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #f3d0df;
+        }
+        .blog-post:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .blog-img-container {
+            width: 100%;
+            height: 380px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .blog-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .blog-img-container img:hover {
+            transform: scale(1.02);
+        }
+        /* Philosophy Cards */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .philosophy-card {
+            background: #fff0f3;
+            padding: 1.8rem;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .philosophy-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+        }
+        .philosophy-card strong {
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        /* Heart Inspiration Box */
+        .heart-box {
+            background: linear-gradient(135deg, #fff0f3, #ffe6ed);
+            padding: 3rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            text-align: center;
+            border: 1px solid #f3d0df;
+        }
+        .heart-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        .heart-box p {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--white);
+            margin-top: 4rem;
+            font-size: 1rem;
+        }
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
 
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.8rem 1rem;
+                flex-wrap: wrap;
+            }
+            nav a {
+                margin: 0.4rem 1rem;
+                font-size: 1rem;
+            }
+            header {
+                padding: 3rem 1.5rem;
+            }
+            section {
+                padding: 2rem;
+            }
+            .blog-img-container {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book a Class</a>
+        <a href="blog.html" class="active">Blog & Philosophy</a>
+    </nav>
+
+    <!-- Header Banner -->
+    <header>
+        <h1>Our Blog & Philosophy</h1>
+        <p>Explore the history of dance, discover future career opportunities, and embrace the joy of moving freely!</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Section 1: Philosophy & Freedom to Move -->
+        <section id="philosophy">
+            <h2>The Blooms in Motion Philosophy</h2>
+            <p class="intro-text">At Blooms in Motion Dance Academy, we believe that dance is much more than physical steps—it is a pure expression of the soul. Dance gives you the <strong>freedom to move</strong>, express your innermost passion, and live a happier, longer life.</p>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <strong>Joyful Movement for Life</strong>
+                    <p>Moving your body regularly through dance releases endorphins, reduces stress, strengthens cardiovascular health, and keeps you vital and energetic at any stage of life.</p>
+                </div>
+                <div class="philosophy-card">
+                    <strong>Never Be Afraid to Share</strong>
+                    <p>Every student carries unique talents and gifts. We encourage you never to hide your passion. Step out boldly, share your art with the world, and let your light shine!</p>
+                </div>
+                <div class="philosophy-card">
+                    <strong>You Are Our Family</strong>
+                    <p>No matter where you live across the globe, you are welcomed into a warm, supportive international family that celebrates your milestones and encourages your growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Dance History & Roots with Real Genre Photography -->
+        <section id="history">
+            <h2>Roots & History of Dance Genres</h2>
+            <p class="intro-text">Every dance style tells a profound cultural story passed down through generations. Discover the historical origins behind some of the world's most beloved genres:</p>
+
+            <!-- Ballet -->
+            <div class="blog-post">
+                <h3>1. Ballet: The Foundation of Grace</h3>
+                <p>Originating in the Italian Renaissance courts of the 15th century and further developed in France and Russia, ballet evolved from court spectacle into a rigorous theatrical art form. It establishes absolute technical discipline, poise, line control, and spatial awareness that empowers dancers across all other genres.</p>
+                <div class="blog-img-container">
+                    <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=1200&q=80" alt="Real ballerina practicing classical ballet technique">
+                </div>
+            </div>
+
+            <!-- Contemporary -->
+            <div class="blog-post">
+                <h3>2. Contemporary & Modern: Breaking Boundaries</h3>
+                <p>Born in the late 19th and early 20th centuries as a rebellion against rigid classical ballet restrictions, pioneers championed natural movement, floor work, and emotional honesty. Contemporary dance fuses these modern principles with balletic strength, giving dancers absolute freedom of interpretation.</p>
+                <div class="blog-img-container">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80" alt="Contemporary dancer expressing emotion through floor work">
+                </div>
+            </div>
+
+            <!-- Hip-Hop -->
+            <div class="blog-post">
+                <h3>3. Hip-Hop & Street Dance: Urban Culture & Community</h3>
+                <p>Emerging in the Bronx, New York during the 1970s, hip-hop and street dance styles (including breaking, popping, and locking) developed as powerful cultural outlets for self-expression, storytelling, and community resilience. Today, these dynamic rhythms dominate global stages, music videos, and commercial media.</p>
+                <div class="blog-img-container">
+                    <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1200&q=80" alt="Dancers performing energetic street dance choreography">
+                </div>
+            </div>
+
+            <!-- Latin American & Salsa -->
+            <div class="blog-post">
+                <h3>4. Latin American & Rhythm: Passion in Motion</h3>
+                <p>Rooted in a vibrant blend of African, Indigenous, and European traditions across Latin America and the Caribbean, styles like Salsa, Bachata, and Cha-Cha-Cha are driven by fiery rhythms, rhythmic hip isolations, and spirited partner connection that celebrate life and community celebration.</p>
+                <div class="blog-img-container">
+                    <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=1200&q=80" alt="Dancers moving with high energy to latin rhythms">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Future Opportunities -->
+        <section id="opportunities">
+            <h2>Future Opportunities Through Dance</h2>
+            <p class="intro-text">Mastering dance opens doors to incredible personal and professional pathways that can shape your future:</p>
+            
+            <ul style="padding-left: 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+                <li><strong>Professional Performance & Commercial Media:</strong> Build the high-level technique required for music videos, theater productions, stage tours, and international competitions.</li>
+                <li><strong>Teaching & Academy Leadership:</strong> Turn your passion into a career by becoming a certified professional instructor, sharing your expertise with aspiring students worldwide.</li>
+                <li><strong>Confidence & Public Presence:</strong> The poise, posture, and discipline learned in dance translate directly into public speaking, interviews, and leadership roles in everyday life.</li>
+                <li><strong>Global Cultural Connection:</strong> Connect directly with international artists, choreographers, and cultural festivals, expanding your worldview and collaborative network.</li>
+            </ul>
+
+            <div class="heart-box">
+                <h3>Be Part of Blooms in Motion Dance Academy! ❤️</h3>
+                <p>Let us show our passion together. Do not be afraid of the talents and gifts you carry. Join our global family, move your body, live longer and happier, and dance with us today!</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Blooms in Motion Dance Academy. All rights reserved.</p>
+        <p>
+            Secure Email: <a href="mailto:bloomsinmotiondance@proton.me">bloomsinmotiondance@proton.me</a> | 
+            Live Agent Chat: <a href="https://matrix.to/#/@bloominmotiondanceacademy:matrix.org" target="_blank">Matrix Chat Portal</a>
+        </p>
+    </footer>
+
+</body>
+</html>
