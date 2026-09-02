@@ -60,22 +60,29 @@
             align-items: center;
             justify-content: center;
         }
-        /* Large, perfectly proportioned logo */
-        .logo-img {
-            display: block;
-            margin: 0 auto 1.8rem auto;
-            width: 240px;
-            height: 240px;
-            max-width: 240px;
-            object-fit: cover;
-            border-radius: 50%;
+        /* Perfectly balanced, large square frame with rounded corners that fills the header properly */
+        .logo-wrapper {
+            width: 260px;
+            height: 260px;
+            margin-bottom: 1.8rem;
+            border-radius: 20px;
             background: var(--white);
-            padding: 6px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            padding: 10px;
+        }
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
         }
         header h1 {
             margin: 0;
-            font-size: 3rem;
+            font-size: 3.2rem;
             letter-spacing: 0.5px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
@@ -193,10 +200,9 @@
             header {
                 padding: 3rem 1.5rem;
             }
-            .logo-img {
-                width: 170px;
-                height: 170px;
-                max-width: 170px;
+            .logo-wrapper {
+                width: 190px;
+                height: 190px;
             }
             header h1 {
                 font-size: 2.2rem;
@@ -222,7 +228,9 @@
     </nav>
 
     <header>
-        <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
+        </div>
         <h1>Blooms in Motion Dance Academy</h1>
         <p>Move your body, express your passion, and join our global family!</p>
     </header>
@@ -268,7 +276,7 @@
             
             <h3>Class Format & Requirements</h3>
             <ul class="styled-list">
-                <li><strong>1-on-1 Online Video Classes:</strong> Sessions are strictly between the student and teacher to focus heavily on proper technique and receive direct verbal guidance.</li>
+                <li><strong>1-on-1 Online Video Classes:</strong> Sessions are strictly between the student and teacher to focus heavily on proper technique and receive direct verbal guidance.<span></span></li>
                 <li><strong>Duration:</strong> Standard classes are 1 hour, but can be extended based on scheduling availability.</li>
                 <li><strong>Technical Setup:</strong> Students must have their own reliable device, stable Wi-Fi connection, and a private room to avoid distractions during class.</li>
             </ul>
