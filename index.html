@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooms in Motion Dance Academy - Home</title>
+    <style>
+        :root {
+            --primary: #5c164e; /* Deep Plum */
+            --secondary: #ff758c; /* Vibrant Pink */
+            --accent: #ff7eb3; /* Lighter Pink */
+            --bg-light: #fff5f8; /* Very Light Pink Bg */
+            --text-dark: #333333;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), #8a2075);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-img {
+            max-width: 200px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 50%; /* Optional: gives it a soft circle look */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
+            color: #ffe0ea;
+            font-weight: 300;
+        }
+        nav {
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            color: var(--secondary);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: var(--white);
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(92, 22, 78, 0.08);
+            border-top: 5px solid var(--secondary);
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-top: 0;
+            border-bottom: 2px solid #f0d1df;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .genre-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .genre-item {
+            background: #fff0f3;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .genre-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .genre-item strong {
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        ul.styled-list {
+            padding-left: 1.5rem;
+            font-size: 1.1rem;
+        }
+        ul.styled-list li {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        ul.styled-list li::marker {
+            color: var(--secondary);
+        }
+        .heart-box {
+            background: linear-gradient(135deg, #fff0f3, #ffe6ed);
+            padding: 3rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            text-align: center;
+            border: 1px solid #f3d0df;
+        }
+        .heart-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        .heart-box p {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            background-color: var(--primary);
+            color: var(--white);
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            header p { font-size: 1.1rem; }
+            nav { flex-wrap: wrap; padding: 0.5rem; }
+            nav a { margin: 0.5rem 1rem; font-size: 1rem; }
+            .container { margin: 1.5rem auto; padding: 0 1rem; }
+            section { padding: 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
+        <h1>Blooms in Motion Dance Academy</h1>
+        <p>Move your body, express your passion, and join our global family!</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="booking.html">Book a Class</a>
+        <a href="blog.html">Blog & Philosophy</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="home">
+            <h2>Welcome to Our Global Dance Home</h2>
+            <p class="intro-text">This is an international academy open to everyone—whether child or adult, we got you! At Blooms in Motion Dance Academy, we love our students to gain confidence, show their love and passion for dance, and connect with a supportive global community.</p>
+            <p class="intro-text">Our professional, friendly, and kind teachers are focused and determined to help you master your preferred dance genre, improve your technique, and build lasting friendships across borders.</p>
+            
+            <h3>Explore Our Dance Genres</h3>
+            <p>Choose from our core structured styles, or request any custom genre tailored to your personal goals:</p>
+            
+            <div class="genre-grid">
+                <div class="genre-item"><strong>Ballet</strong> Classical form characterized by grace, precision, and strict technical vocabulary (e.g., Vaganova, Cecchetti).</div>
+                <div class="genre-item"><strong>Contemporary</strong> Expressive style combining elements of modern, jazz, lyrical, and classical ballet, focusing on versatility and improvisation.</div>
+                <div class="genre-item"><strong>Modern Dance</strong> A rebellion against classical ballet, emphasizing natural movement, floor work, and the contraction/release of muscles.</div>
+                <div class="genre-item"><strong>Jazz</strong> High-energy dance featuring syncopated rhythms, dramatic flair, isolation movements, and dynamic leaps and turns.</div>
+                <div class="genre-item"><strong>Hip-Hop</strong> Street dance styles primarily performed to hip-hop music, including breaking (breakdancing), popping, locking, and krumping.</div>
+                <div class="genre-item"><strong>Street Dance & Commercial</strong> Urban and club dance styles adapted for music videos, stage performances, and commercial media.</div>
+                <div class="genre-item"><strong>Tap Dance</strong> A style where dancers wear shoes fitted with metal heels and toes, using precise foot strikes to create intricate percussive rhythms.</div>
+                <div class="genre-item"><strong>Ballroom (Standard / Smooth)</strong> Formal partner dances focused on elegance and sweeping movement across the floor, including the Waltz, Tango, Foxtrot, and Viennese Waltz.</div>
+                <div class="genre-item"><strong>Latin American / Rhythm</strong> High-energy partner dances characterized by sensual hip movements and rhythm, including Salsa, Bachata, Cha-Cha-Cha, Rumba, Samba, Jive, and Paso Doble.</div>
+                <div class="genre-item"><strong>Folk & Traditional</strong> Cultural dances passed down through generations reflecting regional history, customs, and community identity (e.g., Irish stepdance, Tinikling, Flamenco, Bharatanatyam).</div>
+                <div class="genre-item"><strong>Lyrical Dance</strong> A fusion of ballet and jazz that interprets the lyrics and emotional depth of a song through fluid, expressive movement.</div>
+                <div class="genre-item"><strong>Acrobatic Dance (Acro)</strong> Combines classical dance technique with precision acrobatic elements, emphasizing strength, flexibility, and tumbling.</div>
+                <div class="genre-item"><strong>K-Pop Cover Dance</strong> Precise, sharp choreography replicating music video performances by popular Korean pop groups.</div>
+                <div class="genre-item"><strong>Swing & Social</strong> Partner dances originating from the swing era and social dance halls, such as Lindy Hop, Charleston, and East/West Coast Swing.</div>
+                <div class="genre-item"><strong>Breakdancing (Breaking)</strong> Athletic street dance consisting of four primary elements: toprock, downrock, power moves, and freezes.</div>
+                <div class="genre-item"><strong>Dancehall</strong> Jamaican street dance rooted in Caribbean culture, featuring dynamic grooves and social dances.</div>
+                <div class="genre-item"><strong>Vogue & Waacking</strong> Styles born out of the LGBTQ+ ballroom scene and disco era, characterized by sharp arm movements, dramatic posing, and runway-inspired lines.</div>
+                <div class="genre-item"><strong>Belly Dance (Raqs Sharqi)</strong> Middle Eastern folk and classical dance forms emphasizing complex abdominal isolations, fluid torso movements, and rhythmic hip work.</div>
+                <div class="genre-item"><strong>Polynesian & Hula</strong> Traditional storytelling dances from Hawaii, Tahiti, and surrounding islands that use hand motions and footwork to narrate legends or nature.</div>
+                <div class="genre-item"><strong>Flamenco</strong> Expressive Spanish art form consisting of guitar playing, song, and passionate dance featuring rhythmic hand clapping and foot stomping.</div>
+                <div class="genre-item" style="border-left: 4px solid var(--primary); background-color: #fbeaf2;"><strong>...and more genres</strong> according to student preferences! We are here to help you learn what you love.</div>
+            </div>
+        </section>
+
+        <section id="why-us">
+            <h2>Why Choose Us?</h2>
+            <p class="intro-text">Our online private classes are designed to reduce hassle so you can still make time for your passion without conflicting with your busy schedule. Our professional teachers are focused and determined to help you love dance more—they are friendly, kind, professional, and respectful. We not only value learning dancing, but also nurturing good relationships to improve student skills, gain friends, and build a true family.</p>
+            
+            <h3>Class Format & Requirements</h3>
+            <ul class="styled-list">
+                <li><strong>1-on-1 Online Video Classes:</strong> Sessions are strictly between the student and teacher to focus heavily on proper technique and receive direct verbal guidance.</li>
+                <li><strong>Duration:</strong> Standard classes are 1 hour, but can be extended based on scheduling availability.</li>
+                <li><strong>Technical Setup:</strong> Students must have their own reliable device, stable Wi-Fi connection, and a private room to avoid distractions during class.</li>
+            </ul>
+
+            <div class="heart-box">
+                <h3>Let's Dance Together! ❤️</h3>
+                <p>Let us show our passion. Let us not be afraid of the talents and gifts we carry. Be part of this academy, because here, you are part of our family! Let's dance together, move our body, and be happy.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Blooms in Motion Dance Academy. All rights reserved.</p>
+        <p>
+            Secure Email: <a href="mailto:bloomsinmotiondance@proton.me">bloomsinmotiondance@proton.me</a> | 
+            Live Agent Chat: <a href="https://matrix.to/#/@bloominmotiondanceacademy:matrix.org" target="_blank">Matrix Chat Portal</a>
+        </p>
+    </footer>
+
+</body>
+</html>
