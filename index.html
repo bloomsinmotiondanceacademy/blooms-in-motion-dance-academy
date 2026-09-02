@@ -52,7 +52,7 @@
         header {
             background: linear-gradient(135deg, var(--primary), #8a2075);
             color: var(--white);
-            padding: 4.5rem 2rem 4rem 2rem;
+            padding: 5rem 2rem 4.5rem 2rem;
             text-align: center;
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
             display: flex;
@@ -60,25 +60,15 @@
             align-items: center;
             justify-content: center;
         }
-        /* Perfectly balanced, large square frame with rounded corners that fills the header properly */
-        .logo-wrapper {
-            width: 260px;
-            height: 260px;
-            margin-bottom: 1.8rem;
-            border-radius: 20px;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-            padding: 10px;
-        }
+        /* Logo sized prominently with zero containers so it looks large and clean */
         .logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
             display: block;
+            margin: 0 auto 1.8rem auto;
+            width: 320px;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
         }
         header h1 {
             margin: 0;
@@ -200,9 +190,8 @@
             header {
                 padding: 3rem 1.5rem;
             }
-            .logo-wrapper {
-                width: 190px;
-                height: 190px;
+            .logo-img {
+                width: 230px;
             }
             header h1 {
                 font-size: 2.2rem;
@@ -228,9 +217,7 @@
     </nav>
 
     <header>
-        <div class="logo-wrapper">
-            <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
-        </div>
+        <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
         <h1>Blooms in Motion Dance Academy</h1>
         <p>Move your body, express your passion, and join our global family!</p>
     </header>
@@ -276,7 +263,7 @@
             
             <h3>Class Format & Requirements</h3>
             <ul class="styled-list">
-                <li><strong>1-on-1 Online Video Classes:</strong> Sessions are strictly between the student and teacher to focus heavily on proper technique and receive direct verbal guidance.<span></span></li>
+                <li><strong>1-on-1 Online Video Classes:</strong> Sessions are strictly between the student and teacher to focus heavily on proper technique and receive direct verbal guidance.</li>
                 <li><strong>Duration:</strong> Standard classes are 1 hour, but can be extended based on scheduling availability.</li>
                 <li><strong>Technical Setup:</strong> Students must have their own reliable device, stable Wi-Fi connection, and a private room to avoid distractions during class.</li>
             </ul>
