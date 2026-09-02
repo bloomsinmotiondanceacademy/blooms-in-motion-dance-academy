@@ -60,24 +60,24 @@
             align-items: center;
             justify-content: center;
         }
-        /* Extra-large circular wrapper to make the logo big and bold */
+        /* Same large size (340px), but transparent background instead of white */
         .logo-container {
             width: 340px;
             height: 340px;
             margin-bottom: 2rem;
             border-radius: 50%;
-            background-color: var(--white);
+            background: transparent;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            border: 5px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: none;
         }
-        /* Fills the larger circle nicely */
+        /* Fills the space nicely */
         .logo-img {
-            width: 108%;
-            height: 108%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
