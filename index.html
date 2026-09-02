@@ -60,26 +60,19 @@
             align-items: center;
             justify-content: center;
         }
-        /* Large, stunning circular frame that perfectly centers the logo */
-        .logo-wrapper {
-            width: 340px;
-            height: 340px;
+        /* Perfectly centered logo container using CSS background centering */
+        .logo-container {
+            width: 320px;
+            height: 320px;
             margin-bottom: 2rem;
             border-radius: 50%;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: var(--white);
+            background-image: url('logo.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 102%; /* Adjusts size so it fills the circle nicely and removes extra edges */
             box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            border: 6px solid rgba(255, 255, 255, 0.25);
-            padding: 12px;
-        }
-        .logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
+            border: 6px solid rgba(255, 255, 255, 0.3);
         }
         header h1 {
             margin: 0;
@@ -201,9 +194,9 @@
             header {
                 padding: 3rem 1.5rem;
             }
-            .logo-wrapper {
-                width: 240px;
-                height: 240px;
+            .logo-container {
+                width: 230px;
+                height: 230px;
             }
             header h1 {
                 font-size: 2.2rem;
@@ -229,9 +222,7 @@
     </nav>
 
     <header>
-        <div class="logo-wrapper">
-            <img src="logo.png" alt="Blooms in Motion Dance Academy Logo" class="logo-img">
-        </div>
+        <div class="logo-container"></div>
         <h1>Blooms in Motion Dance Academy</h1>
         <p>Move your body, express your passion, and join our global family!</p>
     </header>
