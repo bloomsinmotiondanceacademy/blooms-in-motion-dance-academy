@@ -23,6 +23,7 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.7;
+            overflow-x: hidden;
         }
         /* Navigation Bar - Aligned and Responsive */
         nav {
@@ -79,6 +80,7 @@
             max-width: 900px;
             margin: 3rem auto;
             padding: 0 1.5rem;
+            width: 100%;
         }
         section {
             background: var(--white);
@@ -87,6 +89,9 @@
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(92, 22, 78, 0.08);
             border-top: 6px solid var(--secondary);
+            word-break: normal;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
         h2 {
             color: var(--primary);
@@ -172,10 +177,25 @@
             border-radius: 12px;
             margin-top: 2rem;
             border: 1px solid #f3d0df;
+            word-break: normal;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
         .teacher-box h3 {
             margin-top: 0;
             color: var(--primary);
+        }
+        /* Robust email link wrapping across all viewports */
+        .teacher-box a, footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+        .teacher-box a:hover, footer a:hover {
+            text-decoration: underline;
         }
         footer {
             text-align: center;
@@ -184,10 +204,7 @@
             color: var(--white);
             margin-top: 4rem;
             font-size: 1rem;
-        }
-        footer a {
-            color: var(--secondary);
-            text-decoration: none;
+            overflow-wrap: break-word;
         }
 
         @media (max-width: 768px) {
@@ -208,6 +225,9 @@
             section {
                 padding: 2rem;
             }
+            .container {
+                padding: 0 1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -220,6 +240,12 @@
             }
             header h1 {
                 font-size: 1.8rem;
+            }
+            section {
+                padding: 1.5rem 1rem;
+            }
+            .teacher-box {
+                padding: 1.2rem;
             }
         }
     </style>
